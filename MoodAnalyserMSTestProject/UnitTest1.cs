@@ -27,7 +27,6 @@ namespace MoodAnalyzerMSTestProject
             Assert.AreEqual(expected, mood);
 
         }
-
         //Test Case 3.2 Given empty Mood should throw MoodException indicating Empty Mood.
         //Given-When-Then
         [TestMethod]
@@ -61,6 +60,18 @@ namespace MoodAnalyzerMSTestProject
                 Assert.AreEqual("Mood should not be null", ex.Message);
             }
         }
+        //Test 4.1
+        //To check objects we have created are same or not
+        [TestMethod]
+        public void Given_Mood_Analyzer_ClassName_Should_Return_Object()
+        {
+            string message = null;
+            object expected = new MoodAnalyser(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyserProject.MoodAnalyser", "MoodAnalyser");
+            expected.Equals(obj);
+            //Assert.AreEqual(expected, obj); to check strings are equal or not
+        }
+
 
     }
 

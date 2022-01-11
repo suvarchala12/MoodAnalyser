@@ -8,16 +8,19 @@
             this.message = message;
         }
 
-        public string AnalyseMood()
+        //no parameterised constructor
+        public MoodAnalyser()
         {
 
+        }
+        public string AnalyseMood()
+        {
             try
             {
                 if (this.message.Equals(string.Empty))
                 {
-                    throw new ExceptionTest(ExceptionTest.ExceptionType.EMPTY_MESSAGE, "Mood Should Not Be Empty");
+                    throw new ExceptionTest(ExceptionTest.ExceptionType.EMPTY_MESSAGE, "Mood Should not be Empty");
                 }
-
                 if (this.message.Contains("Sad"))
                 {
                     return "SAD";
@@ -29,7 +32,7 @@
             }
             catch (NullReferenceException)
             {
-                throw new ExceptionTest(ExceptionTest.ExceptionType.NULL_MESSAGE, "Mood Should Not Be Null");
+                throw new ExceptionTest(ExceptionTest.ExceptionType.NULL_MESSAGE, "Mood Should Not Be NULL");
             }
         }
     }
