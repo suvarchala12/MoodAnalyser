@@ -28,7 +28,21 @@ namespace MoodAnalyzerMSTestProject
 
         }
 
+        [TestMethod]
+        [DataRow("I am in HAPPY Mood")]
+        [DataRow(null)]
+        public void GivenHAPPYMoodShouldReturnHappy(string message)
+        {
+            //Arrange
+            string expected = "HAPPY";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
 
+            //Act
+            string mood = moodAnalyser.AnalyseMood();
+
+            //Assert
+            Assert.AreEqual(expected, mood);
+        }
     }
 
 }
