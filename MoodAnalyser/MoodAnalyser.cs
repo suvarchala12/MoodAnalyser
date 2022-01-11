@@ -11,11 +11,19 @@
         public string AnalyseMood()
         {
 
-            if (this.message.Contains("Sad"))
+            try
             {
-                return "SAD";
+
+                if (this.message.Contains("Sad"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
             }
-            else
+            catch
             {
                 return "HAPPY";
             }
